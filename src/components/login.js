@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 const logo = require("../assets/logo.png");
 import firebase from "firebase/app";
+import { Redirect } from "react-router-dom";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
-interface Props {
-  uiConfig: any;
-}
+const Login = (props) => {
+  function isLoggedIn() {
+    const db = firebase.firestore();
+    const usersRef = db
+      .collection("users")
+      .doc(`${localStorage.getItem("uid")}`);
+    // return true;
+  }
 
-const Login = (props: Props) => {
-  return (
+  return isLoggedIn() !== false ? (
+    <Redirect to="/main" />
+  ) : (
     <div className="mt-10">
       <div className="flex justify-center">
         <img className="" src={logo} alt="logo" width="200px" />
