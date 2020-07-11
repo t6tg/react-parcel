@@ -34,25 +34,6 @@ const uiConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const App = () => {
-  const [IsSignin, setIsSignIn] = useState(null);
-  function isLoggedIn() {
-    const db = firebase.firestore();
-    const usersRef = db
-      .collection("users")
-      .doc(`${localStorage.getItem("uid")}`);
-    usersRef.get().then((docSnapshot) => {
-      return docSnapshot.exists;
-    });
-  }
-
-  const SecuredRoute = ({ component: Component, ...rest }) => (
-    <Route
-      {...rest}
-      render={(props) =>
-        isLoggedIn() === true ? <Component {...props} /> : <Redirect to="/" />
-      }
-    />
-  );
   firebase.auth().onAuthStateChanged((user) => {
     setIsSignIn(!!user);
     try {

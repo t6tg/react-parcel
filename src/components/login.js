@@ -4,15 +4,15 @@ import firebase from "firebase/app";
 import { Redirect } from "react-router-dom";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
-const Login = (props) => {
-  function isLoggedIn() {
-    const db = firebase.firestore();
-    const usersRef = db
-      .collection("users")
-      .doc(`${localStorage.getItem("uid")}`);
-    // return true;
-  }
+function isLoggedIn() {
+  const db = firebase.firestore();
+  const usersRef = db.collection("users").doc(`${localStorage.getItem("uid")}`);
+  usersRef.get().then((docSnapshot) => {
+    return docSnapshot.exists;
+  });
+}
 
+const Login = (props) => {
   return isLoggedIn() !== false ? (
     <Redirect to="/main" />
   ) : (
