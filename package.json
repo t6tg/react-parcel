@@ -26,9 +26,20 @@
     "tailwindcss-responsive-embed": "^1.0.0",
     "typescript": "^3.9.6"
   },
+  "keywords": [
+    "react",
+    "typescript",
+    "parcel",
+    "tailwindcss",
+    "template"
+  ],
   "scripts": {
     "start": "parcel public/index.html",
     "build": "parcel build public/index.html"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thanawatgulati/react-parcel/issues"
+  },
+  "homepage": "https://github.com/thanawatgulati/react-parcel#readme"
 }
