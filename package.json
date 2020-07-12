@@ -2,12 +2,10 @@
   "name": "react-parcel-tailwind-template",
   "description": "ReactJS + Parcel + TailwindCSS + Typescript Template",
   "version": "1.0.0",
+  "author": "Thanawat Gulati",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "firebase": "^7.15.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-firebaseui": "^4.1.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
@@ -38,6 +36,9 @@
     "build": "parcel build public/index.html"
   },
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/thanawatgulati/react-parcel"
+  },
   "bugs": {
     "url": "https://github.com/thanawatgulati/react-parcel/issues"
   },
